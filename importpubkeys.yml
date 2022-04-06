@@ -18,5 +18,5 @@
     - name: Store file into jenkins
       fetch:
        src: /tmp/userpub.zip
-       dest: /tmp/
+       dest: pubkeys
 
