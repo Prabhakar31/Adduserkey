@@ -1,5 +1,5 @@
 ---
-- hosts: LogMachine(Where users are there)
+- hosts: 
   become: yes
   tasks:
     - name: Make Directory
