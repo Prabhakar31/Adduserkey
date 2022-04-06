@@ -1,7 +1,7 @@
 ---
 
 - hosts: 
-  become: true
+  become: yes
   tasks:
     - name: Add authorized key
       shell: cp pubkeys/{ item }}.pub   /home/{{ item }}/.ssh/authorized_key
