@@ -1,0 +1,8 @@
+---
+
+- hosts: 
+  become: true
+  tasks:
+    - name: Add authorized key
+      shell: cp /tmp/keys/{{ item }}.pub   /home/{{ item }}/.ssh/authorized_key
+      with_lines: cat /tmp/keys/users.txt
