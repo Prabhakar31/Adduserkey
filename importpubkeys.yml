@@ -1,0 +1,22 @@
+---
+- hosts: LogMachine(Where users are there)
+  become: yes
+  tasks:
+    - name: Make Directory
+      file:
+       path: /tmp/user
+       state: directory
+
+    - name: copy shell script
+      copy: "src=command.sh dest=/tmp/user"
+
+    - name: Run shell script
+      shell: sh command.sh
+      args:
+        chdir: /tmp/user/
+
+    - name: Store file into jenkins
+      fetch:
+       src: /tmp/userpub.zip
+       dest: /tmp/
+
